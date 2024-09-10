@@ -19,7 +19,7 @@ data "template_file" "bucket_policy" {
 
 resource "aws_s3_bucket" "website_bucket" {
   bucket  = "${var.full_domain}"
-  acl     = "public-read"
+ # acl     = "public-read"
   policy   = "${data.template_file.bucket_policy.rendered}"
 
   website {
